@@ -1,3 +1,4 @@
+//ABC-D Bitmask ビット演算を一切使わないアルゴリズム
 #include<bits/stdc++.h>
 using namespace std;
 
