@@ -1,4 +1,5 @@
-//ABC-D Bitmask ビット演算を一切使わないアルゴリズム
+//ABC301-D Bitmask ビット演算を一切使わないアルゴリズム
+//https://atcoder.jp/contests/abc301/tasks/abc301_d
 #include<bits/stdc++.h>
 using namespace std;
 
