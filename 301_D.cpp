@@ -7,14 +7,15 @@ int main(){
     cin >> s >> n;
 
     //nの2進数文字化
+    int cal=n;
     string n_2="";
-    while(n>1){
+    while(cal>1){
         //int->charは+'0'
         //char->intは-'0'
-        n_2.push_back(n%2+'0');
-        n/=2;
+        n_2.push_back((cal%2)+'0');
+        cal/=2;
     }
-    n_2.push_back(n+'0');
+    n_2.push_back(cal+'0');
     reverse(n_2.begin(),n_2.end());//逆順になっているため
 
 
@@ -38,27 +39,38 @@ int main(){
     }
     cout << s <<endl <<n_2<<endl;
 
-    int check=-1;
     for(int i=0;i<s.size();i++){
-        //異なる桁になる場合がまず存在するか?
-        if(n_2.at(i)!=s.at(i)){
+        //異なる桁になり、かつs.at(i)!='?'の場合がまず存在するか?
+        if(n_2.at(i)!=s.at(i)&&s.at(i)!='?'){
             //この時、s.at(i)が1でn_2.at(i)が0なら即座に-1を出力
-            if(n_2.at(i)=='0'&&s.at(i=='1')){
+            if(n_2.at(i)=='0'&&s.at(i)=='1'){
                 cout << "-1" << endl;
                 return 0;//強制終了
             }
-            //それ以外ならiでは('?'なら)0、iより小さい位で'?'をすべて'1'に
-            if(s.at(i)=='?'){
-                s.at(i)='0';
-            }
+            //それ以外ならiより小さい位で'?'をすべて'1'に、iより大きい位で'?'をnにそろえる
             for(int j=i;j<s.size();j++){
                 if(s.at(j)=='?'){
                     s.at(j)='1';
                 }
             }
+            for(int k=0;k<i;k++){
+                if(s.at(k)=='?'){
+                    s.at(k)=n_2.at(k);
+                }
+            }
+
+            
             //最後に、sを10進数にして終わり
-            
-            
+            reverse(s.begin(),s.end());
+            int ans=0;
+            int c=1;//計算用
+            for(int l=0;l<s.size();l++){
+                ans+=(s.at(l)-'0')*c;
+                c*=2;
+            }
+            cout << ans << endl;
+
+            return 0;
 
      
         }
