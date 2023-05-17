@@ -39,7 +39,7 @@ int main(){
     }
     else{
     }
-    cout << s <<endl <<n_2<<endl;
+    //cout << s <<endl <<n_2<<endl;
 
     for(int i=0;i<s.size();i++){
         //異なる桁になり、かつs.at(i)!='?'の場合がまず存在するか?
