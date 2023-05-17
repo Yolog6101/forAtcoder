@@ -5,11 +5,11 @@ using namespace std;
 
 int main(){
     string s;
-    int n;
+    long long n;
     cin >> s >> n;
 
     //nの2進数文字化
-    int cal=n;
+    long long cal=n;
     string n_2="";
     while(cal>1){
         //int->charは+'0'
