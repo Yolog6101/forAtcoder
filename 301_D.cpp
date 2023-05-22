@@ -64,7 +64,7 @@ int main(){
             //     }
             // }
             
-            //iから最上位まで見て、sが0(か?)で、nが1の時があれば?を変換する処理をして出力、なけれあ
+            
             for(int j=i;j>=0;j--){
                 if(s.at(j)!='1'&&n_2.at(j)=='1'){//
                     s.at(j)='0';//確実に「0」になる
@@ -88,11 +88,11 @@ int main(){
                     cout << ans << endl;
                     return 0;
                 }
-                //なければT>Nなので-1
-                cout << -1 << endl;
-                return 0;
 
             }
+            //なければT>Nなので-1
+            cout << -1 << endl;
+            return 0;
 
         }
         
